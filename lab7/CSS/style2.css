@@ -1,0 +1,33 @@
+.block {
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+    display: none; /* Спочатку приховані */
+}
+
+/* Стилі для кожного блоку */
+.block1 {
+    background-color: green;
+    display: block; /* Блок 1 завжди видно */
+}
+
+.block2 {
+    background-color: blue;
+}
+
+.block3 {
+    background-color: purple;
+}
+
+/* Відображення Блоку 2 при наведенні на Блок 1 */
+.block1:hover + .block2 {
+    display: block;
+}
+
+/* Відображення Блоку 3 при наведенні на Блок 2 */
+.block2:hover + .block3 {
+    display: block;
+}
+

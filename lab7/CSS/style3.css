@@ -1,0 +1,229 @@
+/* Загальні стилі для фону та контейнера форми */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.form-container {
+    border: 20px solid #868686;
+    padding: 0px 20px 20px 20px;
+    width: 620px;
+    text-align: center;
+    background-image: url('/img/cloudtry.jpg');
+}
+
+/* Стиль заголовка з псевдокласом для першої літери і лініями */
+.form-container h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: #af50e6;
+    margin: 20px 20px 20px 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+    font-style: italic;
+    border-bottom: 2px solid #ff0000;
+}
+
+.form-container h2::first-letter {
+    color: #ff00f7;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.form-container h2::before,
+.form-container h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 2px;
+    background-color: #ff0000;
+}
+
+.form-container h2::before {
+    left: -90px;
+}
+
+.form-container h2::after {
+    right: -90px;
+}
+
+/* Стилі для рядків форми */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.input-group.full-width {
+    width: 100%;
+}
+
+.input-group label {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.right {
+    
+}
+
+/* .input-group input,
+.input-group textarea {
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.6);
+    color: black;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    text-indent: 20px;
+} */
+
+input, textarea {
+    width: 48%;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #bbb;
+}
+.input-group input {
+    width: 250px;
+    height: 30px;
+    display: block;
+}
+.input-group textarea {
+    resize: none;
+    height: 46px;
+    width: 540px;
+    padding: 5px 5px 5px 5px;
+}
+
+/* Ефект при фокусі на полях вводу */
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: 2px solid #ff00f7;
+}
+
+/* Стилі для кнопок */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.reset-button,
+.submit-button {
+    width: 130px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s;
+    background: rgb(255, 255, 255);
+    height: 60px;
+}
+
+/* Кнопка Reset */
+.reset-button {
+    color: #ff4500;
+    border-color: #ff4500;
+    margin-left: 330px;
+}
+
+.reset-button:hover {
+    background: #ff4500;
+    color: #fff;
+}
+
+/* Кнопка Submit */
+.submit-button {
+    width: 130px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: 3px solid #0097a7;
+    background-color: white;
+    color: #0097a7;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #00ffff;
+    color: #ffffff;
+}
+button[type="reset"] {
+    background-color: white;
+    color: #0097a7;
+    border-color: #0097a7;
+    width: 130px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border: 3px solid;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button[type="reset"]:hover {
+    border-color: #0097a7;
+    background-color: #0097a7;
+    color: white;
+}
+
+#toggle:checked + h2 {
+    visibility: hidden;
+}
+
+#toggle:checked + h2::before {
+    content: 'Ми вдячні вам';
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #165da3;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 25px;
+    color: #165da3;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+}

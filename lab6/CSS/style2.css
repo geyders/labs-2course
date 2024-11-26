@@ -1,0 +1,130 @@
+.wrapper {
+    width: 1140px;
+    padding: 20px 20px 20px 185px;
+    /* внутрішні поля */
+}
+
+
+
+.logo {
+    border-radius: 250px;
+    border: 2px solid rgb(128, 0, 0);
+    box-shadow: 0 0 7px #c71818;
+    width: 50px;
+    float: left;
+}
+
+/* горизонтальне меню */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+    float: right;
+}
+
+li {
+    margin: 10px;
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    padding: 10px;
+    background: #c71818;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin-top: 100px;
+}
+
+.block {
+    width: 300px;
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    display: inline-block;
+    /* Дозволяє блокам стояти в рядок */
+    vertical-align: top;
+    /* Вирівнювання верхнього краю блоків */
+    text-align: left;
+    /* Текст вирівнюється по лівому краю */
+}
+
+/* 1 */
+.simbord {
+    border: 3px solid rgb(70, 244, 12);
+    border-radius: 50px;
+    margin-right: 40px;
+}
+
+/* 2 */
+.sepbord {
+    border: 3px solid rgb(70, 244, 12);
+    border-radius: 100px 0px;
+    margin-right: 40px;
+}
+
+/* 3 */
+.terbord {
+    border: 3px solid rgb(70, 244, 12);
+    border-radius: 50px 150px 50px 150px;
+}
+
+/* 4 */
+.quarta {
+    border: 15px solid rgb(70, 244, 12);
+    border-radius: 150px / 30px;
+    border-top: 15px solid rgb(37, 95, 18);
+    border-bottom: 15px solid rgb(37, 95, 18);
+}
+
+/* 5 */
+.pblock {
+    border: 15px solid rgb(70, 244, 12);
+    border-radius: 90% 30% / 40% 10%;
+    border-right: 15px solid rgb(37, 95, 18);
+    border-left: 15px solid rgb(37, 95, 18);
+}
+
+/* 6 */
+.sbord {
+    border: 15px solid rgb(70, 244, 12);
+    border-bottom-right-radius: 100%;
+    border-left: 15px solid rgb(37, 95, 18);
+}
+
+/* 7 */
+.sevbord {
+    border: 15px solid transparent;
+    border-image: url(../img/border.png) 30 stretch;
+    border-image-slice: 30%;
+}
+
+/* 8 */
+.ebord {
+    border: 15px solid transparent;
+    border-image: url(../img/border.png) 20% round;
+}
+
+/* 9 */
+.nona {
+    border: 15px solid transparent;
+    border-image: url(../img/border.png) 30 round;
+}
+
+/* 10 */
+.tiboard {
+    border:  15px solid transparent;
+    border-image: url(../img/kolo1.png) 245;
+} 
+/* 11 */
+.elf {
+    border:  15px solid transparent;
+    border-image: url(../img/kolo1.png) 170 round round;
+}
+/* 12 */
+.lboard {
+    border:  15px solid transparent;
+    border-image: url(../img/kolo1.png) 160;
+}
