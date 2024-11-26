@@ -1,0 +1,47 @@
+[
+    {
+      "_id": "productId1",
+      "Name": "Молоко",
+      "UnitOfMeasure": "л",
+      "UnitPrice": 25.50,
+      "SupplierID": "supplierId1",
+      "Category_id": "categoryId1"
+    },
+      {
+        "_id": "productId2",
+        "Name": "Хліб",
+        "UnitOfMeasure": "шт",
+        "UnitPrice": 15,
+        "SupplierID": "supplierId2",
+        "Category_id": "categoryId2"
+      },
+      {
+        "_id": "productId3",
+        "Name": "Яйця",
+        "UnitOfMeasure": "дес.",
+        "UnitPrice": 30,
+        "SupplierID": "supplierId1",
+        "Category_id": "categoryId3"
+      },
+      {
+        "_id": "productId4",
+        "Name": "Сир",
+        "UnitOfMeasure": "кг",
+        "UnitPrice": 120,
+        "SupplierID": "supplierId3",
+        "Category_id": "categoryId1"
+      },
+      {
+        "_id": "productId5",
+        "Name": "Масло",
+        "UnitOfMeasure": "кг",
+        "UnitPrice": 180,
+        "SupplierID": "supplierId2",
+        "Category_id": "categoryId2"
+      }
+    ]
+    
+    
+
+
+  

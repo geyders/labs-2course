@@ -1,0 +1,34 @@
+[
+    {
+      "_id": "invoiceId1",
+      "Sale_id": { "$ref": "Sale", "$id": "saleId1" },
+      "InvoiceDate": "2023-10-02",
+      "TotalAmount": 255
+    
+  },
+  {
+    "_id": "invoiceId2",
+    "Sale_id": "saleId2",
+    "InvoiceDate": "2023-09-25",
+    "TotalAmount": 150
+  },
+  {
+    "_id": "invoiceId3",
+    "Sale_id": "saleId3",
+    "InvoiceDate": "2023-08-15",
+    "TotalAmount": 320
+  },
+  {
+    "_id": "invoiceId4",
+    "Sale_id": "saleId4",
+    "InvoiceDate": "2023-07-30",
+    "TotalAmount": 280
+  },
+  {
+    "_id": "invoiceId5",
+    "Sale_id": "saleId5",
+    "InvoiceDate": "2023-06-10",
+    "TotalAmount": 175
+  }
+]
+

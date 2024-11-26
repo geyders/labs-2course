@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "paymentId1",
+    "Invoice_id": { "$ref": "Invoice", "$id": "invoiceId1" },
+    "PaymentDate": "2023-10-10",
+    "PaymentAmount": 255,
+    "PaymentMethod": "Кредитна карта"
+  }
+  ,
+  {
+    "_id": "paymentId2",
+    "Invoice_id": "invoiceId2",
+    "PaymentDate": "2023-09-27",
+    "PaymentAmount": 150,
+    "PaymentMethod": "Готівка"
+  },
+  {
+    "_id": "paymentId3",
+    "Invoice_id": "invoiceId3",
+    "PaymentDate": "2023-08-18",
+    "PaymentAmount": 320,
+    "PaymentMethod": "Дебетова картка"
+  },
+  {
+    "_id": "paymentId4",
+    "Invoice_id": "invoiceId4",
+    "PaymentDate": "2023-07-31",
+    "PaymentAmount": 280,
+    "PaymentMethod": "Кредитна карта"
+  },
+  {
+    "_id": "paymentId5",
+    "Invoice_id": "invoiceId5",
+    "PaymentDate": "2023-06-12",
+    "PaymentAmount": 175,
+    "PaymentMethod": "Готівка"
+  }
+]

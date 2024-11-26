@@ -1,0 +1,28 @@
+[
+  {
+    "_id": "stockId1",
+    "Product_id": { "$ref": "Product", "$id": "productId1" },
+    "QuantityInStock": 100
+  }
+  ,
+  {
+    "_id": "stockId2",
+    "Product_id": "productId2",
+    "QuantityInStock": 150
+  },
+  {
+    "_id": "stockId3",
+    "Product_id": "productId3",
+    "QuantityInStock": 200
+  },
+  {
+    "_id": "stockId4",
+    "Product_id": "productId4",
+    "QuantityInStock": 120
+  },
+  {
+    "_id": "stockId5",
+    "Product_id": "productId5",
+    "QuantityInStock": 90
+  }
+]

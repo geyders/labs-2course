@@ -1,0 +1,357 @@
+db.orders.deleteMany({});
+db.customer.deleteMany({});
+db.products.deleteMany({});
+db.supplier.deleteMany({});
+db.invoice.deleteMany({});
+db.employee.deleteMany({});
+db.productcategory.deleteMany({});
+db.sale.deleteMany({});
+db.stock.deleteMany({});
+
+Видалення з Payment, де paymentAmount менше за 1000
+db.payment.deleteMany({ paymentAmount: { $lt: 1000 } });
+
+
+Видалення з orders, де quantityOrdered менше за 10
+db.orders.deleteMany({ quantityOrdered: { $lt: 10 } });
+
+
+Видалення з Customer, де registrationDate до 2023 року
+db.customer.deleteMany({ registrationDate: { $lt: new Date("2023-01-01") } });
+
+
+Видалення з product, де UnitPrice менше за 500
+db.product.deleteMany({ UnitPrice: { $lt: 500 } });
+
+
+Видалення з Supplier, де lastActiveDate більше ніж 2 роки тому
+db.supplier.deleteMany({ lastActiveDate: { $lt: new Date(new Date().setFullYear(new date().getFullYear() - 2)) } });
+Видалення з Invoice, де totalAmount менше за середнє значення
+const avgTotalAmount = db.invoice.aggregate([
+  { $group: { _id: null, avgAmount: { $avg: "$totalAmount" } } }
+]).toArray()[0].avgAmount;
+
+db.invoice.deleteMany({ totalAmount: { $lt: avgTotalAmount } });
+
+
+Видалення з Employee, де hireDate до 2017-02-05
+db.employee.deleteMany({ HireDate: { $lt: new Date("2017-02-05") } });
+
+Видалення з Stock, де quantity менше за 20
+db.stock.deleteMany({ quantity: { $lt: 20 } });
+
+
+Видалення з Sale, де QuantityAfterSale менше за 30
+db.sale.deleteMany({ QuantityAfterSale: { $lt: 30 } });
+
+Видалення з ProductCategory, де category_id більше за 4
+db.productcategory.deleteMany({ category_id: { $gt: 4 } });
+
+
+
+
+
+
+завдання 3
++Вивести повну інформацію про працівників
+db.employee.find({});
+
++Вивести повну інформацію про клієнтів (унікальні customerName і contactInfo)
+db.customer.aggregate([
+  { $group: { _id: { customerName: "$customerName", ContactInfo: "$contactInfo" } } }
+]);
+
+
+
++Знайти клієнта з найбільшою кількістю замовлень
+db.orders.aggregate([
+  { $group: { _id: "$Customer_id", orderCount: { $sum: 1 } } },
+  { $sort: { orderCount: -1 } },
+  { $limit: 1 },
+  { $lookup: {
+      from: "customer",
+      localField: "_id",
+      foreignField: "_id",
+      as: "customer_info"
+    }
+  },
+  { $unwind: "$customer_info" },
+  { $project: {
+      customer_id: "$_id",
+      customerName: "$customer_info.customerName",
+      contactInfo: "$customer_info.contactInfo",
+      orderCount: "$orderCount"
+    }
+  }
+]);
+
+
++Середня кількість коштів, що отримано від замовників, для кожного місяця поточного року
+db.orders.aggregate([
+  {
+    $match: {
+      OrderDate: { $gte: ISODate("2023-01-01T00:00:00Z") } // Фільтр для поточного року
+    }
+  },
+  {
+    $group: {
+      _id: { $month: "$OrderDate" }, // Групування по місяцях
+      averageAmount: { $avg: "$TotalAmount" } // Обчислення середньої суми
+    }
+  },
+  {
+    $sort: { _id: 1 } // Сортування за місяцем
+  }
+]);
+
+
++Максимальна ціна продукту між 500 і 1000
+db.products.find({ UnitPrice: { $gte: 15, $lte: 200 } })
+  .sort({ UnitPrice: -1 })
+  .limit(1);
+
++Мінімальна кількість замовлень за клієнта
+db.orders.aggregate([
+  { $group: { _id: "$customer_id", orderCount: { $sum: 1 } } },
+  { $group: { _id: null, minOrders: { $min: "$orderCount" } } }
+]);
+
+
++Знайти працівника, що оформив найбільшу кількість замовлень
+db.sale.aggregate([
+  {
+    $group: {
+      _id: "$Employee_id",
+      orderCount: { $sum: 1 }
+    }
+  },
+  {
+    $sort: { orderCount: -1 }
+  },
+  {
+    $limit: 1
+  },
+  {
+    $lookup: {
+      from: "employee",
+      localField: "_id", // Зверніть увагу на це поле
+      foreignField: "_id",
+      as: "employee_info"
+    }
+  },
+  {
+    $unwind: {
+      path: "$employee_info",
+      preserveNullAndEmptyArrays: true // Дозволяємо порожні значення
+    }
+  },
+  {
+    $project: {
+      employeeName: "$employee_info.EmployeeName",
+      orderCount: "$orderCount"
+    }
+  }
+]);
+АГРЕАЦІЇ
++1.  Підрахувати середню суму замовлень для кожного місяця за поточний рік
+db.orders.aggregate([
+  {
+    '$match': {
+      'OrderDate': {
+        '$gte': new Date("2023-01-01"),
+        '$lt': new Date("2024-01-01")
+      }
+    }
+  },
+  {
+    '$group': {
+      '_id': { '$month': '$OrderDate' },
+      'avgAmount': { '$avg': '$TotalAmount' }
+    }
+  },
+  {
+    '$match': { 'avgAmount': { '$gt': 100 } }
+  },
+  {
+    '$sort': { '_id': 1 }
+  },
+  {
+    '$project': {
+      'month': '$_id',
+      'averageAmount': '$avgAmount',
+      '_id': 0
+    }
+  }
+]).toArray((err, result) => {
+  if (err) throw err;
+  console.log(result); // Виводимо фактичний результат
+});
+
+
++2. Знайти постачальника, який постачав продукти з найбільшою кількістю продажів
+
+db.orders.aggregate([
+  {
+    '$lookup': {
+      from: 'products',  // Змінено на 'products' з маленької літери
+      localField: 'Product_id',
+      foreignField: '_id',
+      as: 'ProductData'
+    }
+  },
+  {
+    '$unwind': { path: '$ProductData', preserveNullAndEmptyArrays: true }
+  },
+  {
+    '$lookup': {
+      from: 'supplier',  // Змінено на 'supplier' з маленької літери
+      localField: 'ProductData.SupplierID',
+      foreignField: '_id',
+      as: 'SupplierData'
+    }
+  },
+  {
+    '$unwind': { path: '$SupplierData', preserveNullAndEmptyArrays: true }
+  },
+  {
+    '$group': {
+      '_id': '$SupplierData._id',
+      'totalSold': { '$sum': '$QuantitySold' }
+    }
+  },
+  {
+    '$sort': { totalSold: -1 }
+  },
+  {
+    '$limit': 1
+  },
+  {
+    '$lookup': {
+      from: 'supplier',  // Знову 'supplier' з маленької літери
+      localField: '_id',
+      foreignField: '_id',
+      as: 'SupplierInfo'
+    }
+  },
+  {
+    '$unwind': '$SupplierInfo'
+  },
+  {
+    '$project': {
+      SupplierName: '$SupplierInfo.supplierName',
+      totalSold: 1
+    }
+  }
+]).forEach(doc => {
+  printjson(doc); // Виводимо кожен документ у зрозумілому форматі
+});
+
+
+3.Вивести кількість замовлень для кожного клієнта, починаючи з 2023 року, та їхній контакт
+
+db.orders.aggregate([
+  {
+    "$match": {
+      "OrderDate": { "$gte": new Date("2023-01-01") }
+    }
+  },
+  {
+    "$lookup": {
+      from: "customer",
+      localField: "Customer_id",
+      foreignField: "_id",
+      as: "CustomerData"
+    }
+  },
+  {
+    "$match": { "CustomerData.0": { $exists: true } } // Перевірка, що є хоча б один запис у CustomerData
+  },
+  {
+    "$group": {
+      "_id": "$Customer_id", // Групування за Customer_id
+      "totalOrders": { "$sum": 1 },
+      "contactInfo": { "$first": { $arrayElemAt: ["$CustomerData.contactInfo", 0] } }
+    }
+  },
+  {
+    "$sort": { "totalOrders": -1 }
+  }
+]).pretty();
+
+4. Знайти всі продукти в певній категорії, в яких кількість на складі більше 50
+db.products.aggregate([
+  {
+    "$lookup": {
+      from: "stock",
+      localField: "_id",
+      foreignField: "Product_id",
+      as: "StockData"
+    }
+  },
+  { 
+    "$unwind": "$StockData" 
+  },
+  {
+    "$match": { 
+      "StockData.QuantityInStock": { "$gt": 50 },
+      "Category_id": ObjectId("67277ddbbaced3b4a0378699") // Замініть на відповідний ObjectId
+    }
+  },
+  {
+    "$project": { 
+      "ProductName": "$Name", 
+      "QuantityInStock": "$StockData.QuantityInStock" 
+    }
+  },
+  {
+    "$sort": { "QuantityInStock": -1 } 
+  }
+]).pretty();
+
+
+5.Підрахувати суму платежів для кожного клієнта за весь час
+
+db.invoice.aggregate([
+  {
+    "$lookup": {
+      from: "orders",
+      localField: "Sale_id",
+      foreignField: "_id",
+      as: "OrderData"
+    }
+  },
+  {
+    "$unwind": {
+      path: "$OrderData",
+      preserveNullAndEmptyArrays: true // Дозволяємо порожні значення, якщо Invoice не має замовлень
+    }
+  },
+  {
+    "$lookup": {
+      from: "customer",
+      localField: "OrderData.Customer_id",
+      foreignField: "_id",
+      as: "CustomerData"
+    }
+  },
+  {
+    "$unwind": {
+      path: "$CustomerData",
+      preserveNullAndEmptyArrays: true // Дозволяємо порожні значення, якщо Order не має клієнта
+    }
+  },
+  {
+    "$group": {
+      "_id": "$CustomerData._id",
+      "totalPayments": { "$sum": "$TotalAmount" },
+      "customerName": { "$first": "$CustomerData.customerName" }
+    }
+  },
+  {
+    "$sort": { "totalPayments": -1 }
+  }
+]).pretty();
+
+
+
+
