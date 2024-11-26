@@ -1,0 +1,48 @@
+[
+  {
+    "_id": "saleId1",
+    "SaleDate": "2023-10-01",
+    "Product_id": { "$ref": "Product", "$id": "productId1" },
+    "QuantitySold": 10,
+    "QuantityAfterSale": 90,
+    "Customer_id": { "$ref": "Customer", "$id": "customerId1" },
+    "Employee_id": { "$ref": "Employee", "$id": "employeeId1" }
+  }
+  ,
+  {
+    "_id": "saleId2",
+    "SaleDate": "2023-09-12",
+    "Product_id": "productId2",
+    "QuantitySold": 15,
+    "QuantityAfterSale": 85,
+    "Customer_id": "customerId2",
+    "Employee_id": "employeeId2"
+  },
+  {
+    "_id": "saleId3",
+    "SaleDate": "2023-08-18",
+    "Product_id": "productId3",
+    "QuantitySold": 7,
+    "QuantityAfterSale": 93,
+    "Customer_id": "customerId3",
+    "Employee_id": "employeeId3"
+  },
+  {
+    "_id": "saleId4",
+    "SaleDate": "2023-07-22",
+    "Product_id": "productId4",
+    "QuantitySold": 12,
+    "QuantityAfterSale": 88,
+    "Customer_id": "customerId4",
+    "Employee_id": "employeeId4"
+  },
+  {
+    "_id": "saleId5",
+    "SaleDate": "2023-06-25",
+    "Product_id": "productId5",
+    "QuantitySold": 20,
+    "QuantityAfterSale": 80,
+    "Customer_id": "customerId5",
+    "Employee_id": "employeeId5"
+  }
+]

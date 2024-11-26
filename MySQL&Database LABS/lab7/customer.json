@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "customerId1",
+    "customerName": "Дмитро Грідасов",
+    "contactInfo": "grid.dmytro@gmail.com"
+  },
+  {
+    "_id": "customerId2",
+    "customerName": "Олена Коваль",
+    "contactInfo": "olena.koval@gmail.com"
+  },
+  {
+    "_id": "customerId3",
+    "customerName": "Ігор Петренко",
+    "contactInfo": "igor.petrenko@gmail.com"
+  },
+  {
+    "_id": "customerId4",
+    "customerName": "Марія Сидоренко",
+    "contactInfo": "mariya.sydorenko@gmail.com"
+  },
+  {
+    "_id": "customerId5",
+    "customerName": "Олександр Іваненко",
+    "contactInfo": "olex.ivanenko@gmail.com"
+  }
+]

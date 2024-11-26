@@ -1,0 +1,43 @@
+[
+    {
+      "_id": "orderId1",
+      "OrderDate": "2023-10-05",
+      "Customer_id": { "$ref": "Customer", "$id": "customerId1" },
+      "Product_id": { "$ref": "Product", "$id": "productId1" },
+      "Employee_id": { "$ref": "Employee", "$id": "employeeId1" },
+      "QuantityOrdered": 5,
+      "TotalAmount": 127.5
+    },
+  {
+    "_id": "orderId2",
+    "OrderDate": "2023-09-10",
+    "Customer_id": "customerId2",
+    "Product_id": "productId2",
+    "QuantityOrdered": 10,
+    "TotalAmount": 150
+  },
+  {
+    "_id": "orderId3",
+    "OrderDate": "2023-08-20",
+    "Customer_id": "customerId3",
+    "Product_id": "productId3",
+    "QuantityOrdered": 8,
+    "TotalAmount": 240
+  },
+  {
+    "_id": "orderId4",
+    "OrderDate": "2023-07-15",
+    "Customer_id": "customerId4",
+    "Product_id": "productId4",
+    "QuantityOrdered": 3,
+    "TotalAmount": 90
+  },
+  {
+    "_id": "orderId5",
+    "OrderDate": "2023-06-25",
+    "Customer_id": "customerId5",
+    "Product_id": "productId5",
+    "QuantityOrdered": 7,
+    "TotalAmount": 210
+  }
+]

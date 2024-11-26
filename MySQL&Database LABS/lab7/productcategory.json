@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "categoryId1",
+    "CategoryName": "Молочні продукти",
+    "Description": "Продукти з молока"
+  },
+  {
+    "_id": "categoryId2",
+    "CategoryName": "Фрукти та овочі",
+    "Description": "Свіжі фрукти та овочі"
+  },
+  {
+    "_id": "categoryId3",
+    "CategoryName": "Хлібобулочні вироби",
+    "Description": "Свіжий хліб і випічка"
+  },
+  {
+    "_id": "categoryId4",
+    "CategoryName": "Кондитерські вироби",
+    "Description": "Торти, печиво, шоколад"
+  },
+  {
+    "_id": "categoryId5",
+    "CategoryName": "Безалкогольні напої",
+    "Description": "Соки, вода, безалкогольні напої"
+  }
+]

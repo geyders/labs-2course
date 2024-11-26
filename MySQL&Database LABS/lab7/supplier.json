@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "supplierId1",
+    "SupplierName": "Худенко Юлія Сергіївна",
+    "ContactInfo": "yuliakhudenko@gmail.com",
+    "Address": "вул. Небесної Сотні 4Б"
+  },
+  {
+    "_id": "supplierId2",
+    "SupplierName": "Коваль Антон Павлович",
+    "ContactInfo": "anton.koval@gmail.com",
+    "Address": "вул. Соборності 21"
+  },
+  {
+    "_id": "supplierId3",
+    "SupplierName": "Олійник Катерина Михайлівна",
+    "ContactInfo": "kateryna.oliynyk@gmail.com",
+    "Address": "вул. Кругова 5"
+  },
+  {
+    "_id": "supplierId4",
+    "SupplierName": "Петренко Ігор Васильович",
+    "ContactInfo": "petrenko.igor@gmail.com",
+    "Address": "вул. Миру 3"
+  },
+  {
+    "_id": "supplierId5",
+    "SupplierName": "Сидоренко Марія Володимирівна",
+    "ContactInfo": "sydorenko.mariya@gmail.com",
+    "Address": "вул. Козацька 15"
+  }
+]
