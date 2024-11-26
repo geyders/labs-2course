@@ -1,0 +1,70 @@
+.wrapper {
+    width: 1140px;
+    padding: 20px 20px 20px 185px;
+    /* внутрішні поля */
+}
+
+
+/* HEADER */
+/* logo */
+.logo {
+    border-radius: 250px;
+    border: 2px solid rgb(128, 0, 0);
+    box-shadow: 0 0 7px #c71818;
+    width: 50px;
+    float: left;
+}
+
+main {
+    margin-top: 100px;
+}
+
+/* горизонтальне меню */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+    float: right;
+}
+
+li {
+    margin: 10px;
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    padding: 10px;
+    background: #c71818;
+    color: white;
+    text-decoration: none;
+}
+
+.rdboard {
+    border-radius: 100px;
+    background-color: rgb(85, 16, 16);
+    padding: 25px;
+    color: white;
+}
+
+.bigblock {
+    margin-top: 30px;
+    border-radius: 100px;
+    background-color: rgb(159, 99, 99);
+    padding: 25px;
+    color: white;
+}
+
+.leftbl {
+    border-radius: 70px;
+    background-color: rgb(119, 35, 35);
+    padding: 25px;
+    color: white;
+    width: 400px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.rightbl {
+    margin-left: 140px;
+}

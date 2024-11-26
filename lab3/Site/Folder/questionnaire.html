@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+</head>
+
+<body>
+    <form action="/Site/Folder/action_page.html" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Анкета</legend>
+            <fieldset>
+                <legend>Особисті дані:</legend>
+                Ім'я: <br>
+                <input type='text' name='firstname' placeholder="Введіть своє ім'я" pattern="^[a-z][^0-9]{2,20}+$"
+                    title="Будь ласка, введіть правильне ім'я" required><br>
+                Призвіще: <br>
+                <input type='text' name='lastname' placeholder="Введіть своє призвіще" required disabled><br><br>
+
+                <div>
+                    <p>Розкажіть про себе:</p>
+                    <textarea></textarea>
+                </div><br>
+
+                <label for="date">Дата народження:</label><br>
+                <input type="date" id="date" name="date" required><br><br>
+
+                <label for="pwd">Введіть пароль:</label><br>
+                <input type="password" id="pwd" name="pwd" placeholder="Введіть пароль"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Пароль не може бути меншим за вісім символів і має містити хоча б одну цифру, одну маленьку та одну велику латинську літеру."
+                    required><br><br>
+
+
+            </fieldset>
+            <fieldset>
+                <legend>Контактні дані</legend>
+                <label for="phone">Введіть номер телефону:</label><br>
+                <input type="phone" id="phone" name="phone" pattern="\+?[0-9\s\-\(\)]+"
+                    title="Номер телефону складається тільки з цифр" placeholder="Введіть номер телефону"
+                    required><br><br>
+
+                <label for="email">Введіть електронну пошту:</label><br>
+                <input type="email" id="email" name="email" autocomplete="off" placeholder="Введіть свій email"><br><br>
+
+
+
+
+            </fieldset><br>
+            <fieldset>
+                <legend>Додаткова інформація</legend>
+                Обери національність: <br>
+                <input type="radio" id="Ukrainian" name="nation" value="Ukrainian">
+                <label for="Ukrainian">Українець</label><br>
+                <input type="radio" id="Japanese" name="nation" value="Japanese">
+                <label for="Japanese">Японець</label><br>
+                <input type="radio" id="American" name="nation" value="American">
+                <label for="American">Американець</label><br><br>
+
+                Обери стать: <br>
+                <input type="radio" id="male" name="sex" value="MALE">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="sex" value="Female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="javascript" name="sex" value="JavaScript">
+                <label for="javascript">JavaScript</label><br><br>
+
+                Яких домашніх улюбленців ти маєш? <br>
+                <input type="checkbox" id="animal1" name="animal1" value="Кіт">
+                <label for="animal1"> Кіт</label><br>
+                <input type="checkbox" id="animal2" name="animal2" value="Собака">
+                <label for="animal2"> Собака</label><br>
+                <input type="checkbox" id="animal3" name="animal3" value="Хом'як">
+                <label for="animal3"> Хом'як</label><br>
+                <input type="checkbox" id="animal44" name="animal4" value="Нічого з переліченого">
+                <label for="animal4"> Нічого з переліченого</label><br>
+
+                <label for="photo">Завантажте своє Аудіо</label>
+                <input accept="audio/*"  multiple   type="file" name="file" id="file">
+                <br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Загальні дані</legend>
+                <div>
+                    <label for="continent">Континент</label>
+                    <select name="continent" id="continent">
+                        <option value="">Євразія</option>
+                        <option value="">Північна Америка</option>
+                        <option selected value="">Південа Америка</option>
+                        <option value="">Африка</option>
+                        <option value="">Австралія</option>
+                        <option value="">Антарктида </option>
+                    </select>
+                </div>
+                <br><br><br><br>
+                <div>
+                    <label for="language">Знання мов:</label>
+                    <select name="language" id="language" multiple size="3">
+                        <option value="language">Англійська</option>
+                        <option value="language">Українська</option>
+                        <option value="language">Польська</option>
+                        <option value="language">Румунська</option>
+                        <option value="language">Німецька</option>
+                        <option value="language">Австро-Угорська </option>
+                    </select>
+                </div><br><br>
+
+                <div></div>
+                    <label for="continent">Громадянство</label>
+                    <select name="continent" id="continent">
+                        <optgroup label="Європа">
+                            <option value="continent">Українське</option>
+                            <option value="continent">Польське</option>
+                            <option value="continent">Англійське</option>
+                        </optgroup>
+                        <optgroup label="Антарктида">
+                            <option value="continent">По дефолту</option>
+                        </optgroup>
+                        <optgroup label="Азія">
+                            <option value="continent">Турецька</option>
+                            <option value="continent">Вірменська</option>
+                            <option value="continent">Китайська</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <br><br>
+
+                <input list="counries" placeholder="Введіть країну">
+                <datalist id="counries">
+                    <option value="Україна">Україна</option>
+                    <option value="США">США</option>
+                </datalist>
+        
+                <br><br>
+            </fieldset><br>
+            <input type='submit' value='Надіслати'><br><br>
+            <input type="reset" value="Очистити"><br><br>
+            <a href="../index.html">Повернутися назад</a>
+        </fieldset>
+    </form>
+</body>
+
+</html>

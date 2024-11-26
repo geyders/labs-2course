@@ -1,0 +1,54 @@
+ p.text-background span {
+     font-weight: 700;
+     font-style: italic;
+     text-decoration: underline;
+ }
+
+ div .text-background span {
+     background-color: yellow;
+ }
+
+ span span {
+     background-color: gray;
+     text-decoration: line-through;
+ }
+
+ ol span span {
+     font-size: 18px;
+     text-transform: uppercase;
+ }
+
+ section>p {
+     text-shadow: 3px 3px 5px brown;
+     text-indent: 50px;
+ }
+
+ li>ul {
+     list-style-type: none;
+     padding-left: 20px;
+ }
+
+ li>ul ::before {
+     content: "✔️";
+     margin-right: 10px;
+ }
+
+ div>.text-background {
+     word-spacing: 50px;
+ }
+
+ div.text-bold>p {
+     font-weight: bold;
+ }
+
+ div.text-bold>section {
+     line-height: 45px;
+ }
+
+ img + p {
+    background-color: brown;
+ }
+ 
+ section ~ p {
+    color: red;
+ }

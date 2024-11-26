@@ -1,0 +1,44 @@
+* {
+    text-align: center;
+}
+#h1 {
+    color: red;
+}
+
+#h3 {
+    font-style: italic;
+}
+
+.bold-word {
+    font-weight: bold;
+}
+
+.lowcase {
+    vertical-align: sub; 
+    font-size: smaller; 
+}
+
+.upcase {
+    vertical-align: super; 
+    font-size: smaller; 
+}
+
+.linethr {
+    text-decoration: line-through;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.custom-line {
+    height: 7px; 
+    background-color: green; 
+    width: 500px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bgcolor {
+    background-color: yellow;
+}

@@ -1,0 +1,112 @@
+.wrapper {
+    width: 1140px;
+    padding: 20px 20px 20px 185px;
+    /* внутрішні поля */
+}
+
+
+/* HEADER */
+/* logo */
+.logo {
+    border-radius: 250px;
+    /* Радіус скруглення */
+    border: 2px solid rgb(128, 0, 0);
+    /* Параметри рамки */
+    box-shadow: 0 0 7px #c71818;
+    width: 50px;
+    float: left;
+}
+
+main {
+    margin-top: 100px;
+}
+
+/* горизонтальне меню */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+    float: right;
+}
+
+li {
+    margin: 10px;
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    padding: 10px;
+    background: #c71818;
+    color: white;
+    /* Додаємо білий колір тексту */
+    text-decoration: none;
+    /* Видаляє підкреслення */
+}
+
+img {
+    border-radius: 250px;
+    margin-left: 50px;
+}
+
+.block {
+    width: 300px;
+    height: 400px;
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+
+.stimg {
+    background-image: linear-gradient(45deg, yellow, green, blue, orange);
+}
+
+.sepshadw {
+    background-image:
+    linear-gradient(45deg, green 15%, transparent 25%, transparent 25%, transparent 75%, orange 75%, blue 100%),
+    linear-gradient(45deg, yellow 15%, transparent 25%, transparent 25%, transparent 75%, darkmagenta 75%, orange 100%);
+background-size: 100px 100px;
+background-position: 0 0, 50px 50px;
+background-repeat: repeat;
+
+}
+
+.terimg {
+    background: linear-gradient(90deg,green,white),
+    linear-gradient(90deg,blue,yellow),
+    linear-gradient(90deg,green,white),
+    linear-gradient(90deg,blue,yellow),
+    linear-gradient(90deg,green,white),
+    linear-gradient(90deg,blue,yellow);
+    background-size: 50px;
+    background-position: 0,50px,100px,150px,200px,250px;
+    background-repeat:no-repeat ;
+}
+
+.kvarshad {
+    background-image: linear-gradient(-45deg,yellow 40%,transparent 40%),
+    linear-gradient(45deg,green 25%,transparent 25%),
+    linear-gradient(120deg,orange 15%,transparent 50%,white),
+    linear-gradient(blue 30%,white 60%);
+}
+
+.funlast {
+    background: repeating-linear-gradient(-190deg,rgba(255,0,0,0.5) 30px,
+    rgba(255,153,0,0.5) 60px,rgba(255,255,0,0.5) 90px,
+    rgba(0,255,0,0.5)120px,rgba(0,0,255,0.5)150px,
+    rgba(75,0,130,0.5)180px,rgba(238,130,238,0.5)210px,
+    rgba(255,0,0,0.5)),
+    repeating-linear-gradient(190deg,rgba(255,0,0,0.5) 40px,
+    rgba(255,153,0,0.5) 80px,rgba(255,255,0,0.5) 120px,
+    rgba(0,255,0,0.5)160px,rgba(0,0,255,0.5)200px,
+    rgba(75,0,130,0.5)240px,rgba(238,130,238,0.5)280px,
+    rgba(255,0,0,0.5) 300px),
+    repeating-linear-gradient(23deg,red 50px,
+    yellow 100px,yellow 150px,
+    green 200px,blue 250px,
+    indigo 300px,violet 350px,
+    red 370px);
+}

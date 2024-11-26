@@ -1,0 +1,77 @@
+        /* Основний контейнер */
+        .container {
+            position: relative;
+            width: 580px;
+            height: 260px;
+        }
+
+        /* Верхній блок */
+        .topblock {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: green;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            z-index: 1;
+        }
+
+        /* Лівий блок */
+        .left {
+            left: 0;
+        }
+
+        /* Центральний блок */
+        .center {
+            position: absolute;
+            top: 60px;
+            left: 190px;
+            width: 200px;
+            height: 200px;
+            background-color: lightgreen;
+            color: black;
+            text-align: center;
+            line-height: 200px;
+            z-index: 2;
+        }
+
+        .blueblock {
+            position: absolute;
+            top: 60px;
+            width: 150px;
+            height: 200px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            display: flex;
+            /* Вирівнювання тексту */
+            justify-content: center;
+            /* По горизонталі */
+            align-items: center;
+            /* По вертикалі */
+            padding: 5px;
+            /* Додаємо відступ */
+            box-sizing: border-box;
+            /* Враховуємо padding у розмірах блоку */
+            line-height: 1.2;
+            /* Зменшуємо міжрядковий інтервал */
+            z-index: 1;
+            overflow-wrap: break-word;
+            /* Перенос слів */
+        }
+
+        
+
+        /* Правий блок */
+        .right {
+            left: 430px;
+        }
+
+        .container * {
+            word-break: break-all;
+            overflow-wrap: anywhere;
+        }

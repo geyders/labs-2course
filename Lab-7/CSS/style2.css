@@ -1,0 +1,51 @@
+/* Загальні стилі для блоків */
+.block {
+    border: 2px solid black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10px 0;
+    position: relative;
+}
+
+/* Стилі для кожного блоку */
+.block1 {
+    width: 200px;
+    height: 50px;
+    background-color: green;
+    cursor: pointer;
+    top: 215px;
+    left: 140px;
+    color: black;
+}
+
+.block2 {
+    width: 300px;
+    height: 50px;
+    background-color: blue;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    left: 200px;
+}
+
+.block3 {
+    width: 400px;
+    height: 80px;
+    background-color: purple;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    left: 140px;
+}
+
+/* Поява Блоку 2 при наведенні на Блок 1 */
+.block1:hover + .block2 {
+    opacity: 1;
+}
+
+/* Поява Блоку 3 при наведенні на Блок 2 */
+.block2:hover + .block3 {
+    opacity: 1;
+}

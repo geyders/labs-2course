@@ -1,0 +1,32 @@
+a {
+    color: blueviolet;
+}
+
+.firsttry {
+    color: green;
+}
+
+.task3-3 {
+    list-style-type: square;
+}
+
+.picgrame {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.picgrame li::before {
+    content: "✔️";
+    margin-right: 10px;
+}
+
+ul li ul {
+    list-style-type: none;
+}
+
+
+ol li ol {
+    list-style-type: none;
+    text-align: left;
+    padding: 0px;
+}

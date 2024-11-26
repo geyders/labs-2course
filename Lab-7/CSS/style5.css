@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7c7777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.weather-widget {
+    background-color: #000;
+    color: white;
+    width:250px;
+    height: 250px;
+    padding: 10px;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    z-index:3;
+    margin-bottom: -40px;
+    text-align: left;
+}
+
+.controls {
+    position: absolute;
+    top: 60px;
+    left: -30px;
+    display: flex;
+}
+
+.arrow {
+    background-color: rgba(186, 186, 186, 0.7);
+    padding: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.main-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.date {
+    font-size: 45px;
+    color: white;
+}
+
+.cloud {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    z-index: 0;
+}
+
+.cloud img {
+    width: 400px;
+    opacity: 0.9;
+}
+
+.forecast {
+    display: flex;
+    background-color: rgba(255, 255, 255 , 0.6 );
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -50px;
+    left: 140px;
+    right: 0;
+    z-index: 0;
+    height: 50px;
+
+    width: 240px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.forecast .day {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+}
+
+.forecast .day:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}

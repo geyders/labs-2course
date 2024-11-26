@@ -1,0 +1,110 @@
+/* Загальні стилі для обох панелей */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Горизонтальна панель навігації */
+.horizontal-nav {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.horizontal-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.horizontal-nav ul li {
+    margin: 0 10px;
+}
+
+.horizontal-nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.horizontal-nav ul li a:hover {
+    background-color: #4CAF50;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.horizontal-nav ul li a.active {
+    background-color: #388E3C;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.float-right {
+    margin-left: auto;
+}
+
+
+.vertical-nav {
+    background-color: #333333;
+    width: 250px;
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    z-index: 2;
+}
+
+.vertical-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vertical-nav ul li {
+    position: relative;
+}
+
+.vertical-nav ul li a {
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.vertical-nav ul li a:hover {
+    background-color: #333333;
+}
+
+.vertical-nav ul li ul.dropdown {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    left: 250px;
+    top: 0;
+    background-color: #333;
+    width: 200px;
+    border-radius: 2px;
+}
+
+.vertical-nav ul li:hover ul.dropdown {
+    display: block;
+}
+
+.vertical-nav ul li ul.dropdown li {
+    position: relative;
+}
+
+.vertical-nav ul li ul.dropdown ul.dropdown {
+    left: 200px;
+    top: 0;
+}
